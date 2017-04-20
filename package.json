@@ -1,1 +1,40 @@
-{     "devDependencies": {         "qrcode-terminal": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-qrcode-terminal",     "homepage": "https://github.com/npmtest/node-npmtest-qrcode-terminal",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-qrcode-terminal.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [qrcode-terminal (v0.11.0)](https://github.com/gtanner/qrcode-terminal)  [![npm package](https://img.shields.io/npm/v/npmtest-qrcode-terminal.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-qrcode-terminal) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-qrcode-terminal.svg)](https://travis-ci.org/npmtest/node-npmtest-qrcode-terminal)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "qrcode-terminal": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-qrcode-terminal",
+    "keywords": [
+        "coverage",
+        "test",
+        "qrcode-terminal"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_qrcode_terminal.js",
+    "name": "npmtest-qrcode-terminal",
+    "nameAlias": "npmtest_qrcode_terminal",
+    "nameOriginal": "npmtest-qrcode-terminal",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-qrcode-terminal.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
